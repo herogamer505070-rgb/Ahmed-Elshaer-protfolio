@@ -156,10 +156,9 @@ nav.scrolled{border-bottom-color:var(--line);box-shadow:0 6px 24px rgba(23,35,31
 .hero-visual{position:relative;justify-self:center;width:min(360px,86vw)}
 /* soft glow behind the portrait — gives a "floating / integrated" feel now, and
    shows through once a transparent cutout is dropped in (data-portrait="cutout"). */
-.hero-glow{position:absolute;z-index:0;inset:-16% -12% -10% -12%;pointer-events:none;
-  background:radial-gradient(58% 52% at 62% 38%,rgba(47,127,117,.22),transparent 70%),
-            radial-gradient(48% 44% at 28% 78%,rgba(184,135,45,.18),transparent 72%);
-  filter:blur(24px)}
+.hero-glow{position:absolute;z-index:0;inset:6%;border-radius:50%;pointer-events:none;
+  background:radial-gradient(closest-side,rgba(47,127,117,.20),rgba(184,135,45,.12) 52%,transparent 74%);
+  filter:blur(48px)}
 .portrait-frame{position:relative;z-index:1;aspect-ratio:4/5;border-radius:22px;overflow:hidden;
   box-shadow:0 30px 70px rgba(23,35,31,.16),0 0 0 1px rgba(23,35,31,.06);background:var(--surface-soft)}
 .portrait-frame picture{position:absolute;inset:0;display:block}
