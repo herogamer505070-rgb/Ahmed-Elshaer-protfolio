@@ -168,7 +168,7 @@ nav.scrolled{border-bottom-color:var(--line);box-shadow:0 6px 24px rgba(23,35,31
 /* Floating transparent-cutout mode — set data-portrait="cutout" on .hero-visual and
    provide assets/portrait-cutout.webp; frame/tag drop away and the cutout floats. */
 .hero-visual[data-portrait="cutout"] .portrait-frame{background:none;box-shadow:none;overflow:visible;border-radius:0}
-.hero-visual[data-portrait="cutout"] .portrait-frame img{object-fit:contain;filter:drop-shadow(0 26px 42px rgba(23,35,31,.30))}
+.hero-visual[data-portrait="cutout"] .portrait-frame img{object-fit:contain;object-position:bottom;filter:drop-shadow(0 20px 36px rgba(23,35,31,.24));-webkit-mask-image:linear-gradient(to bottom,#000 86%,transparent);mask-image:linear-gradient(to bottom,#000 86%,transparent)}
 .hero-visual[data-portrait="cutout"] .portrait-tag{display:none}
 .portrait-tag{
   position:absolute;top:14px;left:14px;
@@ -384,15 +384,13 @@ footer p{font-family:'IBM Plex Mono',monospace;font-size:.7rem;color:rgba(246,24
         <a class="btn btn-ghost" href="Ahmed_Elshaer_Canonical_CV.pdf" download>Download CV ↓</a>
       </div>
     </div>
-    <div class="hero-visual enter d3" data-portrait="framed">
+    <div class="hero-visual enter d3" data-portrait="cutout">
       <div class="hero-glow" aria-hidden="true"></div>
       <div class="portrait-frame">
         <picture>
-          <!-- Floating cutout swap (provide your own asset — see assets/HIGGSFIELD_ASSETS.md):
-               1) export a transparent cutout to assets/portrait-cutout.webp
-               2) set data-portrait="cutout" on the .hero-visual above
-               3) uncomment the <source> line below. -->
-          <!-- <source srcset="assets/portrait-cutout.webp" type="image/webp"> -->
+          <!-- Floating transparent cutout (active). To revert to the framed photo:
+               set data-portrait="framed" on .hero-visual above and delete the cutout <source>. -->
+          <source srcset="assets/portrait-cutout.webp" type="image/webp">
           <source srcset="assets/portrait-studio.webp" type="image/webp">
           <img src="assets/portrait-studio.png" width="760" height="950" alt="Ahmed Elshaer, finance and operations automation specialist, professional portrait">
         </picture>

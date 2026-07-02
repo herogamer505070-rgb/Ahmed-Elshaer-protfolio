@@ -10,7 +10,7 @@ HTML — never bake copy into an image. Compress everything to WebP/AVIF and kee
 
 ---
 
-## 1. Floating hero portrait (the main one) — READY
+## 1. Floating hero portrait (the main one) — ACTIVE ✅
 
 **File:** `assets/portrait-cutout.webp` (transparent background, subject only)
 **Recommended size:** ~760×950, transparent PNG → convert to WebP
@@ -18,15 +18,14 @@ HTML — never bake copy into an image. Compress everything to WebP/AVIF and kee
 Safest generation path is Higgsfield **`remove_background`** on the existing portrait
 (keeps the real face) rather than a generative face prompt.
 
-**To enable (3 steps, no other change needed):**
-1. Put the cutout at `assets/portrait-cutout.webp`.
-2. In `index.html`, on the hero `<div class="hero-visual …">`, change
-   `data-portrait="framed"` → `data-portrait="cutout"`.
-3. Uncomment the `<source srcset="assets/portrait-cutout.webp" …>` line just below it.
+**Status:** live. `assets/portrait-cutout.webp` (760×943, transparent, ~72 KB) was
+produced with Higgsfield `remove_background` on the real portrait (no face generation),
+and the hero uses `data-portrait="cutout"` with the cutout `<source>` active. The
+frame/location-pill drop away and the cutout floats on the soft glow (`.hero-glow`) with
+a drop-shadow and a soft bottom-fade mask.
 
-The CSS already handles cutout mode: the frame/border/location-pill drop away and the
-cutout floats on the existing soft glow (`.hero-glow`) with a drop-shadow.
-The current framed portrait stays as the automatic fallback if the file is missing.
+**To revert to the framed photo:** set `data-portrait="framed"` on `.hero-visual` and
+delete the cutout `<source>`. `portrait-studio.webp/.png` remain as fallbacks.
 
 ## 2. Open Graph cover — OPTIONAL (already have a real one)
 
